@@ -9,7 +9,7 @@ Projeto final da disciplina de Python do bootcamp Ser+Tech, uma parceria da Ada 
 3. Com os dados armazenados realizaremos análises para avaliar o desempenho de uma carteira durante um período definido.      
 4. A aplicação deve permitir interação com o usuário através do prompt de comando num menu interativo, onde ele escolherá quais ações irão compor sua carteira, atualizar seus dados de cadastro e acompanhar os rendimentos dos seus ativos.      
 5. Devemos cadastrar estes dados do cliente:      
-     * Nome, CPF, data de nascimento, celular, CEP e número de residência, estado civil e valor do patrimônio.
+     * Nome, CPF, data de nascimento, celular, CEP, logradouro, número da residência, complemento, bairro, cidade e estado. __Obs: Adicionei telefone, email e valor do patrimônio aos atributos do cliente, fora do escopo do projeto.__
 6. Para as informações de CPF consumiremos a  [API ViaCep](https://viacep.com.br/).    
 7. Devemos cadastrar estes dados da carteira do cliente:
      * Ação, nome da ação, data e valor de compra. 
@@ -20,7 +20,37 @@ Projeto final da disciplina de Python do bootcamp Ser+Tech, uma parceria da Ada 
 
 ## 🌳 Estrutura dos diretórios:
 
-
+├───projeto-financas-python-nuclea     
+│     
+├───models     
+│   └───acao.py    
+│   └───cliente.py     
+│   └───endereco.py     
+│   └───ordem_compra.py     
+│   └───tabelas_intermediarias.py      
+│       
+├───repository       
+│   └───banco_de_dados.py     
+│    
+├───scripts    
+│   └───CRUD-banco-de-dados-nuclea.sql     
+|   └───insert-tabela-endereco.sql     
+|     
+├───tests      
+|     
+└───utils     
+│    └───cep.py     
+|    └───data.py     
+|    └───funcoes_auxiliares.py    
+|    └───valida_cpf.py    
+|    └───valida_rg.py    
+|     
+└───.env     
+└───analise_carteira.py      
+└───main.py      
+└───README.md      
+└───relatorio.py     
+└───requirements
 
 
 ## 🐍 Bibliotecas utilizadas:
