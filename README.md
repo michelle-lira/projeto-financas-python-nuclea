@@ -53,6 +53,27 @@ Projeto final da disciplina de Python do bootcamp Ser+Tech, uma parceria da Ada 
 └───requirements
 
 
+## Relacionamento entre as tabelas:
+
+### Tabela Cliente:
+A tabela **`Cliente`** tem um relacionamento com a tabela **`Endereco`**. O relacionamento é do tipo **muitos-para-um**. 
+Isso significa que alguns clientes podem ter o mesmo endereço. O relacionamento é estabelecido pela coluna **`endereco_id`** na tabela **`Cliente`**, que é uma chave estrangeira que faz referência à coluna **`id`** na tabela **`Endereco`**. A tabela **`Endereco`** não tem uma coluna que faça referência à tabela **`Cliente`**. 
+
+### Tabela Endereço:
+A tabela **`Endereco`** tem uma relação bidirecional com a tabela **`Cliente`**. Isso significa que a tabela **`Cliente`** tem uma relação com a tabela **`Endereco`**, e a tabela **`Endereco`** tem uma relação com a tabela **`Cliente`**. A relação bidirecional é estabelecida pela propriedade **`endereco`** na classe **`Cliente`**, que é definida como um relacionamento com a classe **`Endereco`**, e pela propriedade **`clientes`** na classe **`Endereco`**, que é definida como um relacionamento com a classe **`Cliente`**.
+
+### Tabela Ordem Compra:
+A tabela **`OrdemCompra`** tem um relacionamento com a tabela **`Cliente`**. O relacionamento é do tipo **muitos-para-um**. Isso significa que muitas ordens de compra podem ser feitas por um único cliente. O relacionamento é estabelecido pela coluna **`cliente_id`** na tabela **`OrdemCompra`**, que é uma chave estrangeira que faz referência à coluna **`id`** na tabela **`Cliente`**. 
+
+A tabela **`Cliente`** tem uma relação bidirecional com a tabela **`OrdemCompra`**. Isso significa que a tabela **`OrdemCompra`** tem uma relação com a tabela **`Cliente`**, e a tabela **`Cliente`** tem uma relação com a tabela **`OrdemCompra`**. A relação bidirecional é estabelecida pela propriedade **`ordens_compra`** na classe **`Cliente`**, que é definida como um relacionamento com a classe **`OrdemCompra`**, e pela propriedade **`cliente`** na classe **`OrdemCompra`**, que é definida como um relacionamento com a classe **`Cliente`**.
+
+### Tabela Ação:
+A tabela **`Acao`** tem um relacionamento com a tabela **`OrdemCompra`**. O relacionamento é do tipo **muitos-para-muitos**. Isso significa que muitas ordens de compra podem ter muitas ações, e muitas ações podem estar em muitas ordens de compra. O relacionamento é estabelecido pela tabela intermediária **`ordem_compra_acao`**, que contém as colunas **`ordem_compra_id`** e **`acao_id`**. Essas colunas são chaves estrangeiras que fazem referência às colunas **`id`** nas tabelas **`OrdemCompra`** e **`Acao`**, respectivamente. 
+
+### Tabela Intermediária (Ordem-Compra-Ação):
+**A tabela intermediária é definida como uma instância da classe Table do SQLAlchemy.** A propriedade **`ordens_compra`** na classe **`Acao`** é definida como um relacionamento secundário com a tabela intermediária, e a propriedade **`acoes`** na classe **`OrdemCompra`** é definida como um relacionamento secundário com a tabela intermediária.
+
+
 ## 🐍 Bibliotecas utilizadas:
 
 Package            | Version
