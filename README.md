@@ -18,6 +18,8 @@ Projeto final da disciplina de Python do bootcamp Ser+Tech, uma parceria da Ada 
 10. O código deverá ser construído com a utilização de testes unitários.
 11. Essa aplicação utilizará boas práticas em Python e todo o conteúdo aprendido durante o módulo e o coding tank. O código da aplicação deverá ser armazenado no __Github__ do aluno que será criado durante o módulo.
 
+<br>
+
 ## 🌳 Estrutura dos diretórios:
 
 ├───projeto-financas-python-nuclea     
@@ -52,6 +54,7 @@ Projeto final da disciplina de Python do bootcamp Ser+Tech, uma parceria da Ada 
 └───relatorio.py     
 └───requirements
 
+<br>
 
 ## Relacionamento entre as tabelas:
 
@@ -73,6 +76,7 @@ A tabela **`Acao`** tem um relacionamento com a tabela **`OrdemCompra`**. O r
 ### Tabela Intermediária (Ordem-Compra-Ação):
 **A tabela intermediária é definida como uma instância da classe Table do SQLAlchemy.** A propriedade **`ordens_compra`** na classe **`Acao`** é definida como um relacionamento secundário com a tabela intermediária, e a propriedade **`acoes`** na classe **`OrdemCompra`** é definida como um relacionamento secundário com a tabela intermediária.
 
+<br>
 
 ## 🐍 Bibliotecas utilizadas:
 
